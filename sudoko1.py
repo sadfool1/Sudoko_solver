@@ -41,18 +41,17 @@ def column_checker(board):
     for i in range(9):
         temp = set(get_col(board,i))
         while len(temp) < 9:
-            fix_column(board)
+            fix_column(board, i)
         else:
             #print (board)
             print('hi')
         
-def fix_column(board):
+def fix_column(board, col):
     try:
         counter = 0
         for i in range(9):
             counter = counter + 1
             
-            print (counter)
             for j in range(9):
                 if counter < 9:
                     if board[i][j] == board[i+1][j]:
