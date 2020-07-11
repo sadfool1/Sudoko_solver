@@ -33,19 +33,27 @@ def get_col(board, col):
 def get_row(board, row):
     return board[row]
 
-for i in range(9):
-    temp = set(get_col(board,i))
-    print (len(temp))
 
 def column_checker(board):
     for i in range(9):
         temp = set(get_col(board,i))
-        while len(temp) < 9:
-            fix_column(board, i)
-        else:
-            #print (board)
-            print('hi')
         
+        length_temp = len(temp)
+
+        while length_temp < 9:
+            
+            fix_column(board, i)
+            
+            length_temp = len(set(get_col(board,i))) #update the value of length 
+            
+            if length_temp < 9:
+                continue
+            else:
+                break
+        """
+        else:
+            print (board)
+            break        """
 def fix_column(board, col):
     try:
         counter = 0
@@ -74,8 +82,7 @@ def fix_column(board, col):
                     board[9][randomizer] = board[9][j]
                     
                     board[9][j] = temp
-                    
-                    
+        return board
                     
     except IndexError as e:
         print (board)
