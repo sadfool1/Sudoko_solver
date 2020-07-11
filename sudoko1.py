@@ -54,6 +54,17 @@ def column_checker(board):
         else:
             print (board)
             break        """
+            
+def column_similarity (board, row, col):
+    for i in range (9):
+        if board[i][col] == board[row][col]:
+            continue
+        
+        elif board[row][col] == board[i][col]:
+            return True
+        else:
+            False
+        
 def fix_column(board, col):
     try:
         counter = 0
@@ -62,15 +73,16 @@ def fix_column(board, col):
             
             for j in range(9):
                 if counter < 9:
-                    if board[i][j] == board[i+1][j]:
+                    if column_similarity(board, i) == True:
+                        pass
                         
-                        randomizer = rn.choice([x for x in range(0, 9) if x != j]) #randomize the list cell
+                        #randomizer = rn.choice([x for x in range(0, 9) if x != j]) #randomize the list cell
                         
-                        temp = board[i][randomizer] #integer for the randomized list cell
+                        #temp = board[i][randomizer] #integer for the randomized list cell
                         
-                        board[i][randomizer] = board[i][j]
+                        #board[i][randomizer] = board[i][j]
                         
-                        board[i][j] = temp
+                        #board[i][j] = temp
 
                     else:
                         continue 
@@ -86,6 +98,9 @@ def fix_column(board, col):
                     
     except IndexError as e:
         print (board)
+        
+        
+        
         
 column_checker(board)
 #column = 5
