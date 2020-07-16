@@ -16,22 +16,27 @@ board = [
         [1,2,3,4,5,6,7,8,9],
         [1,2,3,4,5,6,7,8,9],
         [1,2,3,4,5,6,7,8,9],
-        [1,2,3,4,6,5,7,8,9],
+        [5,2,3,4,1,5,7,8,9],
         [1,2,3,4,5,6,7,8,9],
-        [1,2,3,4,5,6,7,8,9],
+        [5,2,3,4,1,6,7,8,9],
         [1,2,3,4,5,6,7,8,9]
         ]
 
 def column_similarity (board, row, col):
+    """
+    want to check if that exact column has other numbers similar to it.
+    OUTPUT: 
+        1. None --> that number has no similar numbers in that column
+        2. [i, col, False] --> i, col will tell us where that exact coordinate of similarity in first encounter
+    """
     my_number = board[row][col]
     print (my_number)
 
-    
     for i in range (9):
         if (i,col) == (row,col):
             continue
         elif board[i][col] == my_number:
-            return [i, False]
+            return [i, col, False] 
         else:
             continue
             
