@@ -40,6 +40,6 @@ def column_similarity (board, row, col):
         else:
             continue
             
-print (column_similarity (board, 5, 0))
+print (column_similarity (board, 2, 0)[1])
             
             

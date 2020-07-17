@@ -58,7 +58,7 @@ def column_checker(board):
 def column_similarity (board, row, col):
     """
     want to check if that exact column has other numbers similar to it.
-    OUTPUT: 
+    POSSIBLE OUTPUT: 
         1. None --> that number has no similar numbers in that column
         2. [i, col, False] --> i, col will tell us where that exact coordinate of similarity in first encounter
     """
@@ -81,9 +81,14 @@ def fix_column(board, col):
             
             for j in range(9):
                 if counter < 9:
-                    if column_similarity(board, j, i) == None:
-                        pass
+                    if column_similarity(board, i, j) == None:
+                        continue
                         
+
+                    elif column_similarity(board, j, i)[1] == False:
+                        
+                        row
+
                         #randomizer = rn.choice([x for x in range(0, 9) if x != j]) #randomize the list cell
                         
                         #temp = board[i][randomizer] #integer for the randomized list cell
