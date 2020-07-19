@@ -79,17 +79,17 @@ def fix_column(board, col):
         for i in range(9):
             counter = counter + 1
             
-            for j in range(9):
+            for j in range(8):
                 if counter < 9:
                     if column_similarity(board, i, j) == None:
                         continue
                         
 
-                    elif column_similarity(board, j, i)[2] == False:
+                    elif column_similarity(board, i, j)[2] == False:
                         
-                        row = j
+                        board
 
-                        #randomizer = rn.choice([x for x in range(0, 9) if x != j]) #randomize the list cell
+                        randomizer = rn.choice([x for x in range(0, 9) if x != j]) #randomize the list cell
                         
                         #temp = board[i][randomizer] #integer for the randomized list cell
                         
