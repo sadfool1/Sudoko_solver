@@ -11,7 +11,7 @@ import random as rn
 import math
 
 board = [
-        [1,2,3,4,5,6,7,8,9],
+        [7,2,3,4,5,6,1,8,9],
         [2,1,3,4,5,6,7,8,9],
         [1,2,3,4,5,6,7,8,9],
         [1,2,3,4,5,6,7,8,9],
@@ -30,7 +30,7 @@ def column_similarity (board, row, col):
         2. [i, col, False] --> i, col will tell us where that exact coordinate of similarity in first encounter
     """
     my_number = board[row][col]
-    print (my_number)
+    #print (my_number)
 
     for i in range (9):
         if (i,col) == (row,col):
@@ -40,6 +40,6 @@ def column_similarity (board, row, col):
         else:
             continue
             
-print (column_similarity (board, 2, 0)[1])
+print (column_similarity (board, 2, 0)[2])
             
             
