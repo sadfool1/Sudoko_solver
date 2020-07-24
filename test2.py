@@ -5,9 +5,18 @@ Created on Sat Jun  6 23:24:42 2020
 
 @author: jameselijah
 """
-import random as rn
+import random
+temporary_row = [3,2,4,1,5,6,7,8,9]
+j = 2 #number 4 in temporary_row
 
-for j in range (9):
-    randomizer = rn.choice([x for x in range(0, 9) if x != j])
 
-print (randomizer)
+for TARGET in range(len(temporary_row)):
+    if temporary_row[TARGET] == j:
+        random_number = random.randint(j+1, 8)
+        temp = temporary_row[random_number]
+        temporary_row[random_number] = temporary_row[TARGET]
+        temporary_row[TARGET] = temp
+
+print (temporary_row)
+
+        
