@@ -87,7 +87,7 @@ def fix_column(board, col):
 
                     elif column_similarity(board, i, j)[2] == False:
                         
-                        board
+                        temporary_row = board[i]
 
                         randomizer = rn.choice([x for x in range(0, 9) if x != j]) #randomize the list cell
                         
