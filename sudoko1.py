@@ -50,10 +50,7 @@ def column_checker(board):
                 continue
             else:
                 break
-        """
-        else:
-            print (board)
-            break        """
+
             
 def column_similarity (board, row, col):
     """
