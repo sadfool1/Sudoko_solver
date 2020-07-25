@@ -63,8 +63,7 @@ def column_similarity (board, row, col):
         2. [i, col, False] --> i, col will tell us where that exact coordinate of similarity in first encounter
     """
     my_number = board[row][col]
-    print (my_number)
-
+    
     for i in range (9):
         if (i,col) == (row,col):
             continue
@@ -74,43 +73,50 @@ def column_similarity (board, row, col):
             continue
         
 def fix_column(board, col):
-    try:
-        counter = 0
-        for i in range(9):
-            counter = counter + 1
-            
-            for j in range(8):
-                if counter < 9:
-                    if column_similarity(board, i, j) == None:
-                        continue
-                        
+    counter = 0
+    for i in range(9):
+        counter = counter + 1
+        
+        for j in range(8):
+            if counter < 9:
+                if column_similarity(board, i, j) == None:
+                    continue
+                    
 
-                    elif column_similarity(board, i, j)[2] == False:
-                        
-                        temporary_row = board[i]
+                elif column_similarity(board, i, j)[2] == False:
+                    
+                    temporary_row = board[i]
 
-                        randomizer = rn.choice([x for x in range(0, 9) if x != j]) #randomize the list cell
-                        
-                        #temp = board[i][randomizer] #integer for the randomized list cell
-                        
-                        #board[i][randomizer] = board[i][j]
-                        
-                        #board[i][j] = temp
+                    
+                    for TARGET in range(len(temporary_row)):
+                        if temporary_row[TARGET] == temporary_row[j]:
+                            random_number = rn.randint(j+1, 8)
+                            temp = temporary_row[random_number]
+                            temporary_row[random_number] = temporary_row[TARGET]
+                            temporary_row[TARGET] = temp
 
-                    else:
-                        continue 
                 else:
-                    randomizer = rn.choice([x for x in range(0, 9) if x != j]) #randomize the list cell
+                    continue 
+            else:
+                if column_similarity(board, i, j) == None:
+                    continue
                     
-                    temp = board[9][randomizer] #integer for the randomized list cell
+
+                elif column_similarity(board, i, j)[2] == False:
                     
-                    board[9][randomizer] = board[9][j]
+                    temporary_row = board[i]
+
                     
-                    board[9][j] = temp
-        return board
-                    
-    except IndexError as e:
-        print (board)
+                    for TARGET in range(len(temporary_row)):
+                        if temporary_row[TARGET] == temporary_row[j]:
+                            random_number = rn.randint(j+1, 8)
+                            temp = temporary_row[random_number]
+                            temporary_row[random_number] = temporary_row[TARGET]
+                            temporary_row[TARGET] = temp
+
+                
+    return board
+
         
         
         
