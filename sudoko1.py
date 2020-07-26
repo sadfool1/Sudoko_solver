@@ -10,7 +10,7 @@ import numpy as np
 import random as rn
 import math
 
-
+#INITITLIAZE BOARD
 board = [
         [1,2,3,4,5,6,7,8,9],
         [1,2,3,4,5,6,7,8,9],
@@ -24,17 +24,23 @@ board = [
         ]
 
 def get_col(board, col):
+    """
+    INPUT: BOARD & TARGET COLUMN
+    OUTPUT: RETURN the column
+    """
     column = []
     for i in range(9):
         temp = board[i][col]
         column.append(temp)
     return column
 
-def get_row(board, row):
-    return board[row]
-
 
 def column_checker(board):
+    """
+    INPUT: BOARD
+    OUTPUT: NONE, but main function is to fascilate the board column
+    ==> constantly checking if the column is
+    """
     for i in range(9):
         temp = set(get_col(board,i))
         
