@@ -38,7 +38,7 @@ def get_col(board, col):
 def column_checker(board):
     """
     INPUT: BOARD
-    OUTPUT: NONE, but main function is to fascilate the board column
+    OUTPUT: BOARD. Main function is to fascilate the board column
     ==> constantly checking if the column is
     """
     for i in range(9):
@@ -56,6 +56,9 @@ def column_checker(board):
                 continue
             else:
                 break
+            
+    for i in range(len(board)):
+        print (board[i])
 
             
 def column_similarity (board, row, col):
@@ -74,6 +77,7 @@ def column_similarity (board, row, col):
             return [i, col, False] 
         else:
             continue
+
         
 def fix_column(board, col):
     
@@ -124,13 +128,15 @@ def fix_column(board, col):
                             temporary_row[TARGET] = temp
 
                 
-    return board
+
 
         
         
         
         
 column_checker(board)
+
+    
 #column = 5
 #col = column - 1
 #print (get_col(board,col))
