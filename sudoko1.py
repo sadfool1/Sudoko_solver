@@ -76,6 +76,12 @@ def column_similarity (board, row, col):
             continue
         
 def fix_column(board, col):
+    
+    """
+    INPUT: BOARD & target column
+    OUTPUT: FIXED BOARD & playable game
+    """
+    
     counter = 0
     for i in range(9):
         counter = counter + 1
