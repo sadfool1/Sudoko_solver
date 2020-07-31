@@ -11,6 +11,8 @@ import random as rn
 import math
 
 #INITITLIAZE BOARD
+
+
 board = [
         [1,2,3,4,5,6,7,8,9],
         [1,2,3,4,5,6,7,8,9],
@@ -93,6 +95,9 @@ def fix_column(board, col):
         for j in range(8):
             if counter < 9:
                 if column_similarity(board, i, j) == None:
+                    
+                    #this is to show that there is NO similarity, then we just skip it
+                    
                     continue
                     
 
@@ -136,8 +141,5 @@ def fix_column(board, col):
         
 column_checker(board)
 
-    
-#column = 5
-#col = column - 1
-#print (get_col(board,col))
+
     
