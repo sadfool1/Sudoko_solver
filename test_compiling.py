@@ -29,8 +29,14 @@ class board_creation:
                 [1,2,3,4,5,6,7,8,9]
                 ]
         
+        for row in self.board:
+            self.board[row] = self.board.row
+            for col in self.board:
+                self.board[row][col] = self.board.col
+    
+        
         self.difficulty = None
-        column_checker(self.board)
+        self.column_checker
         
     def get_col(self, board, col):
         """
@@ -43,7 +49,7 @@ class board_creation:
             column.append(temp)
         return column
 
-    def column_checker(board):
+    def column_checker(self, board):
         """
         INPUT: BOARD
         OUTPUT: BOARD. Main function is to fascilate the board column
@@ -69,7 +75,7 @@ class board_creation:
             print (board[i])
             
             
-    def column_similarity (board, row, col):
+    def column_similarity (self, board, row, col):
         """
         want to check if that exact column has other numbers similar to it.
         POSSIBLE OUTPUT: 
@@ -87,7 +93,7 @@ class board_creation:
                 continue
     
             
-    def fix_column(board, col):
+    def fix_column(self, board, col):
         
         """
         INPUT: BOARD & target column
