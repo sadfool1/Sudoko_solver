@@ -9,6 +9,8 @@ Created on Fri Jul 31 21:26:25 2020
 import numpy as np
 import random as rn
 import math
+import sys
+import traceback
 
 
 class board_creation:
@@ -141,7 +143,13 @@ class board_creation:
     
 
             
-            
+if __name__ == '__main__':
+    try:
+        board_creation() #run the class
+        
+    except Exception as e:
+        traceback.print_exc()
+        sys.exit(1)
     
         
         
