@@ -44,6 +44,7 @@ class board_creation:
         
         for row in range(len(self.board)):
             self.board[row] = self.board.row
+            return (self.board.row)
             
         
         
