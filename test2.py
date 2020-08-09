@@ -29,16 +29,27 @@ class board_creation:
                 [1,2,3,4,5,6,7,8,9]
                 ]
         
-        for row in self.board:
-            self.board.row = self.board[row]
-            for col in self.board:
-                self.board.col = self.board[row][col]
+        #for row in range(len(self.board)):
+        #    self.board[row] = self.board.row
+        #    for col in range(len(self.board)):
+        #        self.board.col = self.board[row][col]
     
-        
+        for i in range(len(self.board)):
+            print (self.row)
+            
         self.difficulty = None
-        print (self.board)
         
     
+    def row(self,board, row):
+        
+        for row in range(len(self.board)):
+            self.board[row] = self.board.row
+            
+        
+        
+        
+board_creation()
+"""   
 if __name__ == '__main__':
     try:
         board_creation() #run the class
@@ -48,5 +59,5 @@ if __name__ == '__main__':
         sys.exit(1)
     
         
-        
+ """       
         
