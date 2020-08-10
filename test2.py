@@ -13,13 +13,15 @@ import sys
 import traceback
 
 
+        
 class board_creation:
-    
+
+        
     def __init__ (self):
         
-        self.board = [
-                [1,2,3,4,5,6,7,8,9],
-                [1,2,3,4,5,6,7,8,9],
+        board = [
+                [1,3,2,4,5,6,7,8,9],
+                [2,1,3,4,5,6,7,8,9],
                 [1,2,3,4,5,6,7,8,9],
                 [1,2,3,4,5,6,7,8,9],
                 [1,2,3,4,5,6,7,8,9],
@@ -28,27 +30,27 @@ class board_creation:
                 [1,2,3,4,5,6,7,8,9],
                 [1,2,3,4,5,6,7,8,9]
                 ]
-        
-        #for row in range(len(self.board)):
-        #    self.board[row] = self.board.row
-        #    for col in range(len(self.board)):
-        #        self.board.col = self.board[row][col]
-    
-        for i in range(len(self.board)):
-            print (self.row)
-            
+        self.board = board
+
         self.difficulty = None
+        print (self.col(0))
         
     
-    def row(self,board, row):
-        
-        for row in range(len(self.board)):
-            self.board[row] = self.board.row
-            return (self.board.row)
+    def row(self, row):
+        for ROW in range(len(self.board)):
+            return self.board[row]
             
-        
-        
-        
+    def col(self, col):
+        """
+        INPUT: BOARD & TARGET COLUMN
+        OUTPUT: RETURN the column
+        """
+        column = []
+        for i in range(9):
+            temp = self.board[i][col]
+            column.append(temp)
+        return column
+    
 board_creation()
 """   
 if __name__ == '__main__':
