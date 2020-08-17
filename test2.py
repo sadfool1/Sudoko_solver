@@ -31,9 +31,10 @@ class board_creation:
                 [1,2,3,4,5,6,7,8,9]
                 ]
         self.board = board
-
         self.difficulty = None
-        print (self.col(0))
+        
+        print (self.column_similarity(0,0))
+        
         
     
     def row(self, row):
@@ -50,6 +51,23 @@ class board_creation:
             temp = self.board[i][col]
             column.append(temp)
         return column
+    
+    def column_similarity (self, row, col):
+        """
+        want to check if that exact column has other numbers similar to it.
+        POSSIBLE OUTPUT: 
+            1. None --> that number has no similar numbers in that column
+            2. [i, col, False] --> i, col will tell us where that exact coordinate of similarity in first encounter
+        """
+        my_number = self.board[row][col]
+        
+        for i in range (9):
+            if (i,col) == (row,col):
+                continue
+            elif self.board[i][col] == my_number:
+                return [i, col, False] 
+            else:
+                continue
     
 board_creation()
 """   
