@@ -15,6 +15,11 @@ import traceback
 
         
 class board_creation:
+    
+    """
+    This game creates a random board data of sudoko.
+    Future updates: Make into Tkinter GUI app
+    """
 
         
     def __init__ (self):
