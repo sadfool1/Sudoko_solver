@@ -33,8 +33,7 @@ class board_creation:
         self.board = board
         self.difficulty = None
         
-        print (self.column_similarity(0,0))
-        
+        self.column_checker()
         
     
     def row(self, row):
@@ -68,9 +67,84 @@ class board_creation:
                 return [i, col, False] 
             else:
                 continue
+    def column_checker(self):
+        """
+        INPUT: BOARD
+        OUTPUT: BOARD. Main function is to fascilate the board column
+        ==> constantly checking if the column is
+        """
+        for i in range(9):
+            temp = set(self.col(i))
+            
+            length_temp = len(temp)
     
-board_creation()
-"""   
+            while length_temp < 9:
+                
+                self.fix_column(i)
+                
+                length_temp = len(set(self.col(i))) #update the value of length 
+                
+                if length_temp < 9:
+                    continue
+                else:
+                    break
+                
+        for i in range(len(self.board)):
+            print (self.board[i])
+            
+    def fix_column(self, col):
+        
+        """
+        INPUT: BOARD & target column
+        OUTPUT: FIXED BOARD & playable game
+        """
+        
+        counter = 0
+        for i in range(9):
+            counter = counter + 1
+            
+            for j in range(8):
+                if counter < 9:
+                    if self.column_similarity(i, j) == None:
+                        
+                        #this is to show that there is NO similarity, then we just skip it
+                        
+                        continue
+                        
+    
+                    elif self.column_similarity(i, j)[2] == False:
+                        
+                        temporary_row = self.board[i]
+    
+                        
+                        for TARGET in range(len(temporary_row)):
+                            if temporary_row[TARGET] == temporary_row[j]:
+                                random_number = rn.randint(j+1, 8)
+                                temp = temporary_row[random_number]
+                                temporary_row[random_number] = temporary_row[TARGET]
+                                temporary_row[TARGET] = temp
+    
+                    else:
+                        continue 
+                else:
+                    if self.column_similarity(i, j) == None:
+                        continue
+                        
+    
+                    elif self.column_similarity(i, j)[2] == False:
+                        
+                        temporary_row = self.board[i]
+    
+                        
+                        for TARGET in range(len(temporary_row)):
+                            if temporary_row[TARGET] == temporary_row[j]:
+                                random_number = rn.randint(j+1, 8)
+                                temp = temporary_row[random_number]
+                                temporary_row[random_number] = temporary_row[TARGET]
+                                temporary_row[TARGET] = temp
+
+
+   
 if __name__ == '__main__':
     try:
         board_creation() #run the class
@@ -79,6 +153,5 @@ if __name__ == '__main__':
         traceback.print_exc()
         sys.exit(1)
     
-        
- """       
+   
         
