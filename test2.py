@@ -18,7 +18,10 @@ class board_creation:
     
     """
     This game creates a random board data of sudoko.
-    Future updates: Make into Tkinter GUI app
+    Future updates: 
+        1. Make into Tkinter GUI app
+        2. Machine learning to solve a sudoku problem
+        3. Have an AI to give hints
     """
 
         
