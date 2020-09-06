@@ -13,7 +13,6 @@ import sys
 import traceback
 
 
-        
 class board_creation:
 
         
@@ -89,8 +88,16 @@ class board_creation:
                 else:
                     break
                 
+        """
         for i in range(len(self.board)):
             print (self.board[i])
+        """
+        
+        new_copy = board
+        
+        for i in range(9):
+            
+            
             
     def fix_column(self, col):
         
