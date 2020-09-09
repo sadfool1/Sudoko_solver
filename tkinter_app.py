@@ -28,6 +28,20 @@ class GAME_CONTROLLER():
         self.root.geometry = ("700x700")
         self.root.resizable = (True, True)
         
+        self.controlframe = LabelFrame(self.root, text = "Menu")
+        self.controlframe.grid(row = 1, column = 0) 
+
+        self.sudokuframe = LabelFrame(self.root, text = "Board")
+        self.sudokuframe.grid(row = 0, column = 0) 
+        
+        user_r_entry = IntVar()
+        
+        for i in range(10):
+            for j in range(10):
+                NUMBER_ENTRY = Entry(self.sudokuframe, 
+                                     textvariable = user_r_entry).grid(row = 1, 
+                                                                column = 0)
+        
         
 if __name__ == '__main__':
     try:
