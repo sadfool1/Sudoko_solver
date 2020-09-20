@@ -17,6 +17,7 @@ import tkinter as tk
 from mpl_toolkits.mplot3d import Axes3D #imports the 3D 
 import time
 from tkinter import TclError
+import os
 
 class GAME_CONTROLLER():
     
@@ -34,13 +35,20 @@ class GAME_CONTROLLER():
         self.sudokuframe = LabelFrame(self.root, text = "Board")
         self.sudokuframe.grid(row = 0, column = 0) 
         
-        user_r_entry = IntVar()
+        BOARD_CREATION = os.path.dirname(__file__)
+        FILE_NAME = "object-oriented-sudoku.py"
+        result = os.path.join(BOARD_CREATION, FILE_NAME)
         
-        for i in range(10):
+        print (exec(result))
+        
+        #user_r_entry = IntVar()
+        
+        """for i in range(10):
             for j in range(10):
                 NUMBER_ENTRY = Entry(self.sudokuframe, 
                                      textvariable = user_r_entry).grid(row = 1, 
-                                                                column = 0)
+                                                                column = 0)"""
+        
         
         
 if __name__ == '__main__':
