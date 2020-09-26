@@ -69,8 +69,8 @@ class board_creation:
     def column_checker(self):
         """
         INPUT: BOARD
-        OUTPUT: BOARD. Main function is to fascilate the board column
-        ==> constantly checking if the column is
+        OUTPUT: BOARD result. Main function is to fascilate the board column
+        ==> constantly checking if the column is orrect or not
         """
         for i in range(9):
             temp = set(self.col(i))
@@ -90,7 +90,7 @@ class board_creation:
 
         #for i in range(len(self.board)):
         #    print (self.board[i])
-        return self.board
+        return print (self.board)
             
             
     def fix_column(self, col):

@@ -37,7 +37,7 @@ class GAME_CONTROLLER():
         
         BOARD_CREATION = os.path.dirname(__file__)
         FILE_NAME = "object-oriented-sudoku.py"
-        result = os.path.join(BOARD_CREATION, FILE_NAME)
+        result = os.execl(BOARD_CREATION, FILE_NAME)
         
         print (exec(result))
         
